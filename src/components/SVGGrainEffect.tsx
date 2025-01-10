@@ -7,7 +7,7 @@ export default function SVGGrainEffect() {
       <filter id="noise">
         <feTurbulence
           type="turbulence"
-          baseFrequency="0.4"
+          baseFrequency="0.7"
           numOctaves="6"
           stitchTiles="stitch"
         ></feTurbulence>

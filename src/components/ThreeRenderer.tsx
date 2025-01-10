@@ -105,7 +105,7 @@ export default function ThreeRenderer() {
     scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(5, -5, 7.5);
+    directionalLight.position.set(5, -5, 1.7);
     scene.add(directionalLight);
 
     function loadGLTFModel() {
@@ -189,11 +189,23 @@ export default function ThreeRenderer() {
       }
       starField.geometry.attributes.size.needsUpdate = true;
 
-      directionalLight.position.x = 13 * Math.sin(Date.now() * 0.0008);
-      directionalLight.position.z = 5 * Math.sin(Date.now() * 0.0008);
+      const maxMouseY = 0.025;
+      const smoothFactor = 0.05;
+      const delayFactor = 0.25;
 
-      starField.rotation.y += (targetMouseX - starField.rotation.y) * 0.1;
-      starField.rotation.x += (-targetMouseY - starField.rotation.x) * 0.1;
+      if (window.innerWidth > 425) {
+        directionalLight.position.x +=
+          (targetMouseX * 150 - directionalLight.position.x) * smoothFactor * delayFactor;
+      } else if (window.innerWidth <= 425) {
+        directionalLight.position.x = 13 * Math.sin(Date.now() * 0.0008);
+        directionalLight.position.z = 5 * Math.sin(Date.now() * 0.0008);
+      }
+
+      starField.rotation.y +=
+        (targetMouseX - starField.rotation.y) * smoothFactor;
+      starField.rotation.x +=
+        (-Math.min(targetMouseY, maxMouseY) - starField.rotation.x) *
+        smoothFactor;
 
       renderer.render(scene, camera);
     }
