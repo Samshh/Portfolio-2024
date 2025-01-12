@@ -71,14 +71,6 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
         { y: 25, x: -25, opacity: 0 },
         { y: 0, x: 0, opacity: 1, duration: 0.8 },
         "-=0.65"
-      )
-      .fromTo(textRef1.current, { text: "lien" }, { text: "connect" }, "-=0.5")
-      .fromTo(textRef2.current, { text: "créer" }, { text: "create" }, "-=0.5")
-      .fromTo(
-        textRef3.current,
-        { text: "incroyable" },
-        { text: "amazing" },
-        "-=0.5"
       );
   });
 
@@ -97,8 +89,9 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
             <Icon icon="mdi:location" /> Davao City | Philippines
           </h4>
           <h1>
-            Let's <span ref={textRef1}></span> and <span ref={textRef2}></span>{" "}
-            something <span ref={textRef3}></span>
+            Let's <span ref={textRef1}>connect</span> and{" "}
+            <span ref={textRef2}>create</span> something{" "}
+            <span ref={textRef3}>amazing</span>
             <span className="text-[#333333]">.</span>
           </h1>
         </div>

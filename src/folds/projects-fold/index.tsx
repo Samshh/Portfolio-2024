@@ -1,4 +1,3 @@
-import animateText from "@/animations/animateText";
 import { useGradientText } from "@/animations/useGradientText";
 import { Accordion } from "@/components/ui/accordion";
 import { useGSAP } from "@gsap/react";
@@ -16,11 +15,8 @@ export default function ProjectsFold() {
   const accordionRef3 = useRef(null);
   const accordionRef4 = useRef(null);
   const accordionRef5 = useRef(null);
-  // const accordionRef6 = useRef(null);
 
   useGSAP(() => {
-    animateText(text, trigger, "Travaux", "Projects", 2);
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: trigger.current,
@@ -44,7 +40,6 @@ export default function ProjectsFold() {
         accordionRef3.current,
         accordionRef4.current,
         accordionRef5.current,
-        // accordionRef6.current,
       ],
       { opacity: 0, y: 50, x: -50 },
       { opacity: 1, y: 0, x: 0, stagger: 0.15, duration: 1, ease: "power3.out" }
@@ -58,7 +53,7 @@ export default function ProjectsFold() {
     >
       <div className="w-full h-auto flex flex-col gap-[1rem]">
         <h1>
-          <span ref={text}></span>
+          <span ref={text}>Projects</span>
           <span className="text-[#333333]">.</span>
         </h1>
       </div>
@@ -147,22 +142,6 @@ export default function ProjectsFold() {
             A JavaScript library that helps developers to animate their
             websites, this includes a website demo to showcase those animations.
           </ProjectAccordion>
-          {/* <ProjectAccordion
-            ref={accordionRef6}
-            value="item-6"
-            title="TicketLy"
-            role="Software Developer"
-            link="https://github.com/Samshh/DiscordBot"
-            linkLabel="Repository"
-            techStack={[
-              { icon: "cib:python", label: "Python" },
-              { icon: "ic:baseline-discord", label: "Discord" },
-            ]}
-          >
-            TicketLy is a Discord bot that helps server owners to manage their
-            server by creating tickets for their members, this promotes a more
-            organized and efficient way of handling server-related issues.
-          </ProjectAccordion> */}
         </Accordion>
       </div>
     </div>

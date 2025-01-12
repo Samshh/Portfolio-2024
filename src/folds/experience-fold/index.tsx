@@ -1,4 +1,3 @@
-import animateText from "@/animations/animateText";
 import { useGradientText } from "@/animations/useGradientText";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -14,8 +13,6 @@ export default function ExperienceFold() {
   const experienceRef4 = useRef(null);
 
   useGSAP(() => {
-    animateText(text, trigger, "Parcours", "Experience", 2);
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: trigger.current,
@@ -52,11 +49,11 @@ export default function ExperienceFold() {
       <div className="flex flex-col items-start justify-center gap-[1rem]">
         <div className="w-full h-auto flex flex-col">
           <h1>
-            <span ref={text}></span>
+            <span ref={text}>Career</span>
             <span className="text-[#333333]">.</span>
           </h1>
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col">
           <div ref={experienceRef1}>
             <ExperienceStruct
               title="Freelance Work"

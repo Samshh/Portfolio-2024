@@ -13,6 +13,7 @@ interface HeroFoldProps {
 }
 
 export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
+
   const textRef1 = useGradientText();
   const textRef2 = useGradientText();
 
@@ -78,18 +79,6 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
         { y: 25, x: -25, opacity: 0 },
         { y: 0, x: 0, opacity: 1, duration: 0.8 },
         "-=0.7"
-      )
-      .fromTo(
-        textRef1.current,
-        { text: "devant" },
-        { text: "front-end", duration: 0.8 },
-        "-=0.5"
-      )
-      .fromTo(
-        textRef2.current,
-        { text: "Réagir" },
-        { text: "React", duration: 0.8 },
-        "-=0.5"
       );
   });
 
@@ -98,16 +87,17 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
   useAnimateButton(spanRef3, buttonsRef3);
 
   return (
-    <div className="h-full min-h-screen px-4 py-4 flex items-center max-w-[1280px] mx-auto select-none">
+    <div
+      className="triggerHero h-full min-h-screen px-4 py-4 flex items-center max-w-[1280px] mx-auto select-none"
+    >
       <div className="flex flex-col justify-center h-full md:w-1/2 gap-[1.5rem]">
         <div className="flex flex-col justify-center items-start">
           <h4 className="font-thin text-[#535353]" ref={introTextRef}>
             Sam Dacara
           </h4>
-
           <h1 ref={headlineRef}>
-            A <span className="w-[213px]" ref={textRef1}></span> developer
-            specializing in <span className="w-[121px]" ref={textRef2}></span>
+            A <span ref={textRef1}>Web</span> Developer<span className="text-[#333333]">,</span> <br />
+            skilled in <span ref={textRef2}>front-end</span>
             <span className="text-[#333333]">.</span>
           </h1>
         </div>

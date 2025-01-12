@@ -10,7 +10,7 @@ export default function ExperienceStruct({
   subtitle,
 }: ExperienceStructProps) {
   return (
-    <div className="py-[0.75rem] flex flex-col gap-[0.25rem] w-full">
+    <div className="py-[0.75rem] flex flex-col gap-[0.25rem]">
       <h4 className="font-normal">
         {title}
         <span className="text-[#333333]">.</span>

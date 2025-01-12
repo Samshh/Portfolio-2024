@@ -1,4 +1,3 @@
-import animateText from "@/animations/animateText";
 import { useGradientText } from "@/animations/useGradientText";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -29,8 +28,6 @@ export default function AboutMeFold() {
   }
 
   useGSAP(() => {
-    animateText(text, trigger, "Sur moi", "About", 2);
-
     const text2Element = text2.current;
     if (!text2Element) return;
 
@@ -103,7 +100,7 @@ export default function AboutMeFold() {
     >
       <div className="flex flex-col justify-center gap-[1rem]">
         <h1 className="text-[#333333]">
-          <span ref={text}></span>.
+          <span ref={text}>About</span>.
         </h1>
         <h5 ref={text2} className="font-light flex flex-wrap">
           I'm a {age}-year-old front-end developer from the Philippines, and I
