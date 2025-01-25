@@ -88,7 +88,7 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
           <h4 className="font-thin font-serif text-[#535353] flex items-center gap-[0.25rem]">
             <Icon icon="mdi:location" /> Davao City | Philippines
           </h4>
-          <h1>
+          <h1 className="text-[2.5rem] sm:text-[3.3rem]">
             Let's <span ref={textRef1}>connect</span> and{" "}
             <span ref={textRef2}>create</span> something{" "}
             <span ref={textRef3}>amazing</span>

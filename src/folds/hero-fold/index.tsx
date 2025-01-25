@@ -87,14 +87,14 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
 
   return (
     <div className="triggerHero h-full min-h-screen px-4 py-4 flex items-center max-w-[1280px] mx-auto select-none">
-      <div className="flex flex-col justify-center h-full md:w-1/2 gap-[1.5rem]">
+      <div className="flex flex-col justify-center h-full gap-[1.5rem]">
         <div className="flex flex-col justify-center items-start">
-          <h4 className="font-thin text-[#535353]" ref={introTextRef}>
+            <h4 className="font-thin text-[#535353]" ref={introTextRef}>
             Sam Dacara
-          </h4>
-          <h1 ref={headlineRef}>
+            </h4>
+          <h1 ref={headlineRef} className="text-[2.5rem] sm:text-[3.3rem]">
             Crafting <span ref={textRef1}>intuitive</span>
-            <span className="text-[#333333]">,</span> <br />
+            <span className="text-[#333333]"></span> <br />
             <span ref={textRef2}>Front-end</span> solutions
             <span className="text-[#333333]">.</span>
           </h1>
