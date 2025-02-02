@@ -2,7 +2,7 @@ import { useGradientText } from "@/animations/useGradientText";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
 import useAnimateButton from "@/animations/animateButton";
@@ -25,6 +25,15 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
   const spanRef3 = useRef(null);
   const contactTrigger = useRef(null);
   const headlineRef = useRef(null);
+  const [email, setEmail] = useState(false);
+
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText("hello@samshh.me");
+    setEmail(true);
+    setTimeout(() => {
+      setEmail(false);
+    }, 3000);
+  };
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -96,16 +105,9 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
           </h1>
         </div>
         <div className="flex justify-start flex-wrap items-start gap-[1rem]">
-          <a
-            href="mailto:hello@samshh.me"
-            target="_blank"
-            rel="noopener"
-            title="hello@samshh.me"
-          >
-            <Button ref={buttonsRef1}>
-              <span ref={spanRef1}>hello@samshh.me</span>
-            </Button>
-          </a>
+          <Button ref={buttonsRef1} onClick={handleEmailClick} disabled={email}>
+            <span ref={spanRef1}>{email ? "email copied!" : "hello@samshh.me"}</span>
+          </Button>
           <a
             href="https://github.com/Samshh/"
             target="_blank"
