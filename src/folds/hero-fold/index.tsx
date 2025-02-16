@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGradientText } from "@/animations/useGradientText";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/animations/scrollToSection";
@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Icon } from "@iconify/react";
 import useAnimateButton from "@/animations/animateButton";
-import { Link } from "react-router-dom";
 
 interface HeroFoldProps {
   projectsRef: React.RefObject<HTMLDivElement>;
@@ -27,23 +26,23 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
   const buttonsRef2 = useRef(null);
   const buttonsRef3 = useRef(null);
 
-  // const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  // const handleResumeClick = () => {
-  //   if (isButtonDisabled) return;
+  const handleResumeClick = () => {
+    if (isButtonDisabled) return;
 
-  //   setIsButtonDisabled(true);
+    setIsButtonDisabled(true);
 
-  //   const resumeUrl = `/resume.pdf`;
-  //   const link = document.createElement("a");
-  //   link.href = resumeUrl;
-  //   link.download = "resume.pdf";
-  //   link.click();
+    const resumeUrl = `/resume.pdf`;
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = "resume.pdf";
+    link.click();
 
-  //   setTimeout(() => {
-  //     setIsButtonDisabled(false);
-  //   }, 2000);
-  // };
+    setTimeout(() => {
+      setIsButtonDisabled(false);
+    }, 2000);
+  };
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -90,9 +89,9 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
     <div className="triggerHero h-full min-h-screen px-4 py-4 flex items-center max-w-[1280px] mx-auto select-none">
       <div className="flex flex-col justify-center h-full gap-[1.5rem]">
         <div className="flex flex-col justify-center items-start">
-          <h4 className="font-thin text-[#535353]" ref={introTextRef}>
+            <h4 className="font-thin text-[#535353]" ref={introTextRef}>
             Sam Dacara
-          </h4>
+            </h4>
           <h1 ref={headlineRef} className="text-[2.5rem] sm:text-[3.3rem]">
             Crafting <span ref={textRef1}>intuitive</span>
             <span className="text-[#333333]"></span> <br />
@@ -111,12 +110,14 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
           <Button ref={buttonsRef2} onClick={() => scrollToSection(contactRef)}>
             <span ref={spanRef2}>CONTACT</span>
           </Button>
-          <Button ref={buttonsRef3}>
-            <Link to={"/resume.pdf"} download={false} target="_blank">
-              <span ref={spanRef3}>
-                <Icon icon="ph:scroll-light" className="text-[26px]" />
-              </span>
-            </Link>
+          <Button
+            ref={buttonsRef3}
+            onClick={handleResumeClick}
+            disabled={isButtonDisabled}
+          >
+            <span ref={spanRef3}>
+              <Icon icon="ph:scroll-light" className="text-[26px]" />
+            </span>
           </Button>
         </div>
       </div>
