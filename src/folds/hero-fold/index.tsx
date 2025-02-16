@@ -33,10 +33,10 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
 
     setIsButtonDisabled(true);
 
-    const resumeUrl = `/SamResume.pdf`;
+    const resumeUrl = `/resume.pdf`;
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "SamResume.pdf";
+    link.download = "resume.pdf";
     link.click();
 
     setTimeout(() => {
