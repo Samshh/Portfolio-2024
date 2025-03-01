@@ -1,19 +1,18 @@
 import { useRef, useState } from "react";
-import HeroFold from "./folds/hero-fold";
-import AboutMeFold from "./folds/aboutme-fold";
-import ProjectsFold from "./folds/projects-fold";
-import ContactFold from "./folds/contact-fold";
+import HeroFold from "../home/hero-fold";
+import AboutMeFold from "../home/aboutme-fold";
+import ProjectsFold from "../home/projects-fold";
+import ContactFold from "../home/contact-fold";
 import { ReactLenis } from "lenis/react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import LoadingPage from "@/components/LoadingPage";
 import Navigation from "@/components/Navigation";
-import SVGGrainEffect from "@/components/SVGGrainEffect";
 import ThreeRenderer from "@/components/ThreeRenderer";
-import CustomCursor from "./components/CustomCursor";
-import ExperienceFold from "./folds/experience-fold";
+import CustomCursor from "../components/CustomCursor";
+import ExperienceFold from "../home/experience-fold";
 
-export default function App() {
+export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const heroRef = useRef(null);
@@ -91,10 +90,9 @@ export default function App() {
   }, [menuOpen]);
 
   return (
-    <main>
+    <>
       {Canvas()}
       <CustomCursor hasStarted={hasStarted} />
-      <SVGGrainEffect />
       <ReactLenis root>
         <div ref={loading}>
           <LoadingPage
@@ -137,6 +135,6 @@ export default function App() {
           )}
         </div>
       </ReactLenis>
-    </main>
+    </>
   );
 }

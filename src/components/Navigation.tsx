@@ -129,7 +129,7 @@ export default function Navigation({
     <>
       <nav
         ref={navRef}
-        className="z-30 sticky top-0 select-none opacity-0 transform -translate-y-12 border-[#333333] border-b bg-[#0c0c0c] bg-opacity-75"
+        className="z-30 fixed w-screen top-0 select-none opacity-0 transform -translate-y-12 border-[#333333] border-b bg-[#0c0c0c] bg-opacity-75"
       >
         <div className="flex justify-between items-center px-4 py-4 max-w-[1280px] min-w-[320px] mx-auto">
           <Button

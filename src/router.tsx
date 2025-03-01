@@ -1,15 +1,22 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import App from "./App";
-import PageNotFound from "./components/PageNotFound";
+import Home from "./pages/home";
+import PageNotFound from "./pages/not-found";
+import Layout from "./layout";
 
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-  },
-  {
-    path: "/404",
-    element: <PageNotFound />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/404",
+        element: <PageNotFound />,
+      },
+    ],
   },
   {
     path: "*",
