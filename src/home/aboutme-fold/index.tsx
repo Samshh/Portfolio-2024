@@ -116,12 +116,17 @@ export default function AboutMeFold() {
         <div className="flex flex-wrap justify-start items-center gap-[0.5rem]">
           {[
             { icon: "akar-icons:react-fill", label: "React" },
-            { icon: "cib:typescript", label: "TypeScript" },
+            { icon: "akar-icons:angular-fill", label: "Angular" },
+            { icon: "akar-icons:vue-fill", label: "Vue" },
+            { icon: "akar-icons:nextjs-fill", label: "Next" },
+            { icon: "akar-icons:typescript-fill", label: "TypeScript" },
+            { icon: "file-icons:tailwind", label: "Tailwind" },
+            { icon: "akar-icons:sass-fill", label: "Sass" },
             { icon: "cib:greensock", label: "GSAP" },
-            { icon: "tabler:brand-threejs", label: "Three.js" },
-            { icon: "solar:figma-bold-duotone", label: "Figma" },
-            { icon: "simple-icons:blender", label: "Blender" },
-            { icon: "simple-icons:inkscape", label: "Inkscape" },
+            { icon: "akar-icons:github-fill", label: "GitHub" },
+            { icon: "tabler:brand-threejs", label: "Three" },
+            { icon: "akar-icons:figma-fill", label: "Figma" },
+            { icon: "mdi:jira", label: "Jira" },
           ].map(({ icon, label }) => (
             <div
               key={label}

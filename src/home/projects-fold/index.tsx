@@ -83,21 +83,38 @@ export default function ProjectsFold() {
           <ProjectAccordion
             ref={accordionRef2}
             value="item-2"
+            title="DurianPy"
+            role="Senior Front-end Developer"
+            link="https://www.durianpy.org/"
+            linkLabel="Website"
+            techStack={[
+              { icon: "akar-icons:react-fill", label: "React" },
+              { icon: "akar-icons:nextjs-fill", label: "Next" },
+              { icon: "file-icons:tailwind", label: "Tailwind" },
+              { icon: "cib:greensock", label: "GSAP" },
+            ]}
+          >
+            DurianPy is a community for Python enthusiasts to learn, share, and
+            connect through monthly meetups, workshops, and events.
+          </ProjectAccordion>
+          <ProjectAccordion
+            ref={accordionRef3}
+            value="item-3"
             title="MMCM OPED"
             role="Lead Front-end Developer & Designer"
             link="https://mmcm-ocp.com/"
             linkLabel="Website"
             techStack={[
               { icon: "akar-icons:react-fill", label: "React" },
-              { icon: "cib:sass", label: "Sass" },
+              { icon: "akar-icons:sass-fill", label: "Sass" },
             ]}
           >
             A website that helps students at Mapúa Malayan Colleges Mindanao to
             find the best companies for their internship.
           </ProjectAccordion>
           <ProjectAccordion
-            ref={accordionRef3}
-            value="item-3"
+            ref={accordionRef4}
+            value="item-4"
             title="MMCM CCIS"
             role="Lead Front-end Developer & Designer"
             link="https://mmcm-ccis.vercel.app/"
@@ -112,8 +129,8 @@ export default function ProjectsFold() {
             in Mapúa Malayan Colleges Mindanao.
           </ProjectAccordion>
           <ProjectAccordion
-            ref={accordionRef4}
-            value="item-4"
+            ref={accordionRef5}
+            value="item-5"
             title="ChainMed"
             role="Front-end Developer & Designer"
             link="https://github.com/Samshh/Hackathon-Project---The-Launchpad"
@@ -121,26 +138,12 @@ export default function ProjectsFold() {
             techStack={[
               { icon: "akar-icons:react-fill", label: "React" },
               { icon: "file-icons:tailwind", label: "Tailwind" },
+              { icon: "cryptocurrency:icp", label: "ICP" },
             ]}
           >
             ChainMed was our entry for the PBWx Davao hackathon (2nd Place).
             Using React and Web3 technologies, we built a secure application for
             automating healthcare.
-          </ProjectAccordion>
-          <ProjectAccordion
-            ref={accordionRef5}
-            value="item-5"
-            title="sAminate"
-            role="Front-end Developer"
-            link="https://www.npmjs.com/package/saminate"
-            linkLabel="Npm"
-            techStack={[
-              { icon: "mdi:vuejs", label: "Vue" },
-              { icon: "cib:greensock", label: "GSAP" },
-            ]}
-          >
-            A JavaScript library that helps developers to animate their
-            websites, this includes a website demo to showcase those animations.
           </ProjectAccordion>
         </Accordion>
       </div>
