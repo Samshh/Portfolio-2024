@@ -27,7 +27,7 @@ export default function ProjectsFold() {
           document.title = "Sam Dacara | Projects";
         },
         onLeaveBack: () => {
-          document.title = "Sam Dacara | Experience";
+          document.title = "Sam Dacara | Career";
         },
       },
       defaults: { ease: "power2.out" },
@@ -101,7 +101,7 @@ export default function ProjectsFold() {
             ref={accordionRef3}
             value="item-3"
             title="MMCM OPED"
-            role="Lead Front-end Developer & Designer"
+            role="Lead Front-end Developer"
             link="https://mmcm-ocp.com/"
             linkLabel="Website"
             techStack={[

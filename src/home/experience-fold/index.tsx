@@ -20,7 +20,7 @@ export default function ExperienceFold() {
         end: "bottom center",
         toggleActions: "play none none reverse",
         onEnter: () => {
-          document.title = "Sam Dacara | Experience";
+          document.title = "Sam Dacara | Career";
         },
         onLeaveBack: () => {
           document.title = "Sam Dacara | About";
