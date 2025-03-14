@@ -116,7 +116,7 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
             disabled={isButtonDisabled}
           >
             <span ref={spanRef3}>
-              <Icon icon="ph:scroll-light" className="text-[26px]" />
+              <Icon icon="solar:download-minimalistic-line-duotone" className="text-[26px]" />
             </span>
           </Button>
         </div>

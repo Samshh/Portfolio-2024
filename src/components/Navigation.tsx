@@ -6,6 +6,7 @@ import BackgroundMusic from "@/components/BackgroundMusic";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import useAnimateButton from "@/animations/animateButton";
+import { Icon } from "@iconify/react";
 
 interface NavigationProps {
   heroRef: React.RefObject<HTMLDivElement>;
@@ -149,7 +150,12 @@ export default function Navigation({
               disabled={buttonDisabled}
               variant={"special"}
             >
-              <span ref={text2}>NAV</span>
+              <span ref={text2}>
+                <Icon
+                  icon="solar:hamburger-menu-linear"
+                  className="text-[25px]"
+                />
+              </span>
             </Button>
           </div>
         </div>

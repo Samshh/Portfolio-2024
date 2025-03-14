@@ -52,7 +52,10 @@ const ProjectAccordion = forwardRef<HTMLDivElement, ProjectAccordionProps>(
                 >
                   <div className="hoverable flex items-center justify-end">
                     <h6 className="font-light">{linkLabel}</h6>
-                    <Icon className="text-3xl" icon="guidance:up-right-arrow" />
+                    <Icon
+                      className="text-3xl"
+                      icon="solar:arrow-right-up-line-duotone"
+                    />
                   </div>
                 </a>
               </div>
