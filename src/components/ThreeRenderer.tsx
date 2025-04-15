@@ -90,6 +90,9 @@ export default function ThreeRenderer() {
           if (next >= 36) {
             setIsStarFieldLoaded(true);
             clearInterval(starFieldInterval);
+            if (!isGLTFLoaded) {
+              bypassLoader();
+            }
             console.log("Star field loaded");
             return 36;
           }
@@ -97,9 +100,14 @@ export default function ThreeRenderer() {
         });
       }, 300);
 
-      setIsStarFieldLoaded(true);
       return stars;
     }
+
+    function bypassLoader() {
+      setTimeout(() => {
+        setIsGLTFLoaded(true);
+      }, 15000);
+    }    
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
