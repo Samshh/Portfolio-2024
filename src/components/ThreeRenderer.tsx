@@ -5,11 +5,13 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 export default function ThreeRenderer() {
   const [isGLTFLoaded, setIsGLTFLoaded] = useState(false);
   const [isStarFieldLoaded, setIsStarFieldLoaded] = useState(false);
+  const [isForceStart, setIsForceStart] = useState(false);
   const [progress, setProgress] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const starFieldMaterialRef = useRef<THREE.ShaderMaterial | null>(null);
 
   useEffect(() => {
+    // bypassLoader();
     if (!canvasRef.current) return;
 
     const scene = new THREE.Scene();
@@ -90,10 +92,6 @@ export default function ThreeRenderer() {
           if (next >= 36) {
             setIsStarFieldLoaded(true);
             clearInterval(starFieldInterval);
-            if (!isGLTFLoaded) {
-              bypassLoader();
-            }
-            console.log("Star field loaded");
             return 36;
           }
           return next;
@@ -105,9 +103,10 @@ export default function ThreeRenderer() {
 
     function bypassLoader() {
       setTimeout(() => {
+        setIsForceStart(true);
         setIsGLTFLoaded(true);
-      }, 15000);
-    }    
+      }, 10000);
+    }
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
@@ -117,6 +116,7 @@ export default function ThreeRenderer() {
     scene.add(directionalLight);
 
     function loadGLTFModel() {
+      bypassLoader();
       const loader = new GLTFLoader();
 
       // const url = `/3d/scene.gltf?cacheBuster=${Date.now()}`;
@@ -203,7 +203,9 @@ export default function ThreeRenderer() {
 
       if (window.innerWidth > 425) {
         directionalLight.position.x +=
-          (targetMouseX * 150 - directionalLight.position.x) * smoothFactor * delayFactor;
+          (targetMouseX * 150 - directionalLight.position.x) *
+          smoothFactor *
+          delayFactor;
       } else if (window.innerWidth <= 425) {
         directionalLight.position.x = 13 * Math.sin(Date.now() * 0.0008);
         directionalLight.position.z = 5 * Math.sin(Date.now() * 0.0008);
@@ -246,6 +248,7 @@ export default function ThreeRenderer() {
   return {
     isGLTFLoaded,
     isStarFieldLoaded,
+    isForceStart,
     Canvas,
     progress,
     starFieldMaterialRef,

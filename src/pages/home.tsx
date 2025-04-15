@@ -28,6 +28,7 @@ export default function Home() {
   const {
     isGLTFLoaded,
     isStarFieldLoaded,
+    isForceStart,
     Canvas,
     progress,
     starFieldMaterialRef,
@@ -99,6 +100,7 @@ export default function Home() {
             progress={progress}
             isGlTFLoaded={isGLTFLoaded}
             isStarFieldLoaded={isStarFieldLoaded}
+            isForceStart={isForceStart}
             onStart={handleStart}
           />
         </div>

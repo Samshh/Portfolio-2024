@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 interface LoadingPageProps {
   isGlTFLoaded: boolean;
   isStarFieldLoaded: boolean;
+  isForceStart: boolean;
   progress: number;
   onStart: () => void;
 }
@@ -14,6 +15,7 @@ interface LoadingPageProps {
 export default function LoadingPage({
   isGlTFLoaded,
   isStarFieldLoaded,
+  isForceStart,
   progress,
   onStart,
 }: LoadingPageProps) {
@@ -161,9 +163,15 @@ export default function LoadingPage({
           </p>
         </div>
         <div ref={messageRef} className="opacity-0">
-          <p className="font-normal font-serif text-[0.6rem] md:text-[0.8rem] text-[#535353]">
-            *Use graphics acceleration for better performance*
-          </p>
+          {!isGlTFLoaded && isForceStart ? (
+            <p className="font-normal font-serif text-[0.6rem] md:text-[0.8rem] text-[#e7e7e7]">
+              3D model loaded too long forcing start...
+            </p>
+          ) : (
+            <p className="font-normal font-serif text-[0.6rem] md:text-[0.8rem] text-[#535353]">
+              *Use graphics acceleration for better performance*
+            </p>
+          )}
         </div>
       </div>
     </div>

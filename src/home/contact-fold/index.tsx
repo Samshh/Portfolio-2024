@@ -17,10 +17,10 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
   const textRef1 = useGradientText();
   const textRef2 = useGradientText();
   const textRef3 = useGradientText();
-  const buttonsRef1 = useRef(null);
+  // const buttonsRef1 = useRef(null);
   const buttonsRef2 = useRef(null);
   const buttonsRef3 = useRef(null);
-  const spanRef1 = useRef(null);
+  // const spanRef1 = useRef(null);
   const spanRef2 = useRef(null);
   const spanRef3 = useRef(null);
   const contactTrigger = useRef(null);
@@ -63,12 +63,12 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
         { y: 0, opacity: 1 },
         "-=0.5"
       )
-      .fromTo(
-        buttonsRef1.current,
-        { y: 25, x: -25, opacity: 0 },
-        { y: 0, x: 0, opacity: 1, duration: 0.8 },
-        "-=0.65"
-      )
+      // .fromTo(
+      //   buttonsRef1.current,
+      //   { y: 25, x: -25, opacity: 0 },
+      //   { y: 0, x: 0, opacity: 1, duration: 0.8 },
+      //   "-=0.65"
+      // )
       .fromTo(
         buttonsRef2.current,
         { y: 25, x: -25, opacity: 0 },
@@ -83,7 +83,7 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
       );
   });
 
-  useAnimateButton(spanRef1, buttonsRef1);
+  // useAnimateButton(spanRef1, buttonsRef1);
   useAnimateButton(spanRef2, buttonsRef2);
   useAnimateButton(spanRef3, buttonsRef3);
 
