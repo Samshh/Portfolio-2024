@@ -169,7 +169,7 @@ export default function LoadingPage({
             </p>
           ) : (
             <p className="font-normal font-serif text-[0.6rem] md:text-[0.8rem] text-[#535353]">
-              *Use graphics acceleration for better performance*
+              | Enable graphics acceleration for better performance |
             </p>
           )}
         </div>

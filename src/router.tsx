@@ -1,12 +1,15 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Home from "./pages/home";
-import PageNotFound from "./pages/not-found";
+import NotFound from "./pages/not-found";
 import Layout from "./layout";
+import Error from "./pages/error";
+
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -14,8 +17,8 @@ const Router = createBrowserRouter([
       },
       {
         path: "/404",
-        element: <PageNotFound />,
-      },
+        element: <NotFound />,
+      }
     ],
   },
   {
