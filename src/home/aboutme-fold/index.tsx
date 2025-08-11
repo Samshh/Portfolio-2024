@@ -105,7 +105,7 @@ export default function AboutMeFold() {
         <h5 ref={text2} className="font-light flex flex-wrap">
           I'm a {age}-year-old front-end developer from the Philippines, and I
           create seamless 2D & 3D web animations. Outside of code, I'm a
-          passionate musician and an anime enthusiast.
+          passionate musician and anime enthusiast.
         </h5>
         <div className="w-full h-[1px] bg-[#333333]"></div>
         <em>
