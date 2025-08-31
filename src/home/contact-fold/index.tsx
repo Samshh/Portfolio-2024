@@ -28,7 +28,7 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
   // const [email, setEmail] = useState(false);
 
   // const handleEmailClick = () => {
-  //   navigator.clipboard.writeText("hello@samshh.me");
+  //   navigator.clipboard.writeText("hello@samdacara.com");
   //   setEmail(true);
   //   setTimeout(() => {
   //     setEmail(false);
@@ -106,7 +106,7 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
         </div>
         <div className="flex justify-start flex-wrap items-start gap-[1rem]">
           {/* <Button ref={buttonsRef1} onClick={handleEmailClick} disabled={email}>
-            <span ref={spanRef1}>{email ? "email copied!" : "hello@samshh.me"}</span>
+            <span ref={spanRef1}>{email ? "email copied!" : "hello@samdacara.com"}</span>
           </Button> */}
           <a
             href="https://github.com/Samshh/"
