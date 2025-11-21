@@ -117,7 +117,7 @@ export default function Home() {
             hasStarted={hasStarted}
           />
           {hasStarted && (
-            <>
+            <div className="flex flex-col sm:px-0 md:px-8 xlg:px-0">
               <section ref={heroRef}>
                 <HeroFold projectsRef={projectsRef} contactRef={footerRef} />
               </section>
@@ -133,7 +133,7 @@ export default function Home() {
               <section ref={contactRef}>
                 <ContactFold footerRef={footerRef} />
               </section>
-            </>
+            </div>
           )}
         </div>
       </ReactLenis>

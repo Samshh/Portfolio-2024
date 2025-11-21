@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import useAnimateButton from "@/animations/animateButton";
 
 interface BackgroundMusicProps {
-  hasStarted: boolean;
+  hasStarted?: boolean;
 }
 
 export default function BackgroundMusic({ hasStarted }: BackgroundMusicProps) {

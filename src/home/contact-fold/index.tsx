@@ -92,7 +92,7 @@ export default function ContactFold({ footerRef }: ContactFoldProps) {
       ref={contactTrigger}
       className="h-full min-h-screen px-4 py-4 max-w-[1280px] mx-auto flex flex-col justify-center items-start select-none relative"
     >
-      <div className="flex flex-grow flex-col justify-center items-start gap-[1.5rem] md:w-1/2">
+      <div className="flex flex-grow flex-col justify-center items-start gap-[1.5rem] lg:w-1/2">
         <div ref={headlineRef}>
           <h4 className="font-thin font-serif text-[#535353] flex items-center gap-[0.25rem]">
             <Icon icon="mdi:location" /> Davao City | Philippines

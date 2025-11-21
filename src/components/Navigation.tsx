@@ -28,7 +28,7 @@ export default function Navigation({
   contactRef,
   navRef,
   menuOpen,
-  hasStarted,
+  // hasStarted,
   onMenuToggle,
 }: NavigationProps) {
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -142,7 +142,7 @@ export default function Navigation({
             <span ref={text}>SAM</span>
           </Button>
           <div className="flex items-center justify-center gap-[1rem]">
-            <BackgroundMusic hasStarted={hasStarted} />
+            <BackgroundMusic />
 
             <Button
               ref={navButton}

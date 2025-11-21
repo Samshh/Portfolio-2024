@@ -67,6 +67,22 @@ export default function ProjectsFold() {
           <ProjectAccordion
             ref={accordionRef1}
             value="item-1"
+            title="Naonao.ph"
+            role="Front-end Developer"
+            link="https://naonao.ph/"
+            linkLabel="Website"
+            techStack={[
+              { icon: "akar-icons:react-fill", label: "React" },
+              { icon: "file-icons:tailwind", label: "Tailwind" },
+            ]}
+          >
+            Get ready to supercharge your networking experience with Naonao.
+            Dive into a world where seamless networking meets exciting event
+            planning, all at your fingertips!
+          </ProjectAccordion>
+          <ProjectAccordion
+            ref={accordionRef2}
+            value="item-2"
             title="CHEDˣ2.0"
             role="Lead Front-end Developer"
             link="https://chedx2024.usep.edu.ph/"
@@ -81,8 +97,8 @@ export default function ProjectsFold() {
             December 4-5, 2024, at the SMX Convention Center, Davao City.
           </ProjectAccordion>
           <ProjectAccordion
-            ref={accordionRef2}
-            value="item-2"
+            ref={accordionRef3}
+            value="item-3"
             title="DurianPy"
             role="Senior Front-end Developer"
             link="https://www.durianpy.org/"
@@ -91,15 +107,14 @@ export default function ProjectsFold() {
               { icon: "akar-icons:react-fill", label: "React" },
               { icon: "akar-icons:nextjs-fill", label: "Next" },
               { icon: "file-icons:tailwind", label: "Tailwind" },
-              { icon: "cib:greensock", label: "GSAP" },
             ]}
           >
             DurianPy is a community for Python enthusiasts to learn, share, and
             connect through monthly meetups, workshops, and events.
           </ProjectAccordion>
           <ProjectAccordion
-            ref={accordionRef3}
-            value="item-3"
+            ref={accordionRef4}
+            value="item-4"
             title="MMCM OPED"
             role="Lead Front-end Developer"
             link="https://mmcm-ocp.com/"
@@ -111,22 +126,6 @@ export default function ProjectsFold() {
           >
             A website that helps students at Mapúa Malayan Colleges Mindanao to
             find the best companies for their internship.
-          </ProjectAccordion>
-          <ProjectAccordion
-            ref={accordionRef4}
-            value="item-4"
-            title="MMCM CCIS"
-            role="Lead Front-end Developer & Designer"
-            link="https://mmcm-ccis.vercel.app/"
-            linkLabel="Website"
-            techStack={[
-              { icon: "akar-icons:react-fill", label: "React" },
-              { icon: "file-icons:tailwind", label: "Tailwind" },
-              { icon: "cib:greensock", label: "GSAP" },
-            ]}
-          >
-            A landing site for the College of Computer and Information Science
-            in Mapúa Malayan Colleges Mindanao.
           </ProjectAccordion>
           <ProjectAccordion
             ref={accordionRef5}

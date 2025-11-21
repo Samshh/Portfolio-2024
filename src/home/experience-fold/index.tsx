@@ -44,7 +44,7 @@ export default function ExperienceFold() {
   return (
     <div
       ref={trigger}
-      className="h-full min-h-[80vh] grid grid-cols-1 md:grid-cols-2 items-center justify-center px-4 py-4 max-w-[1280px] mx-auto select-none"
+      className="h-full min-h-[80vh] grid grid-cols-1 lg:grid-cols-2 items-center justify-center px-4 py-4 max-w-[1280px] mx-auto select-none"
     >
       <div className="flex flex-col items-start justify-center gap-[1rem]">
         <div className="w-full h-auto flex flex-col">
@@ -56,20 +56,20 @@ export default function ExperienceFold() {
         <div className="flex flex-col">
           <div ref={experienceRef1}>
             <ExperienceStruct
-              title="Freelance Work"
-              role="Front-end Developer & Web Designer (Jul. 2022-Present)"
+              title="Dotside Studios"
+              role="Front-end Developer (Jan. 2025-Present)"
             />
           </div>
           <div ref={experienceRef2}>
             <ExperienceStruct
-              title="Tactiv Studios"
-              role="Front-end Developer (Dec. 2024-Present)"
+              title="Freelance Work"
+              role="Front-end Developer & Web Designer (Jul. 2022-Present)"
             />
           </div>
           <div ref={experienceRef3}>
             <ExperienceStruct
-              title="Mapúa Malayan Colleges Mindanao"
-              role="OCP Lead Front-end Developer (Sept. 2024-Present)"
+              title="Tactiv Studios"
+              role="Front-end Developer (Dec. 2024-Sep. 2025)"
             />
           </div>
           <div ref={experienceRef4}>
