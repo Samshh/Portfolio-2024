@@ -1,7 +1,7 @@
 import { useGradientText } from "@/animations/useGradientText";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import gsap from "gsap";
+import gsap from "@/lib/gsap-register";
 import ExperienceStruct from "./components/ExperienceStruct";
 
 export default function ExperienceFold() {
@@ -44,9 +44,9 @@ export default function ExperienceFold() {
   return (
     <div
       ref={trigger}
-      className="h-full min-h-[80vh] grid grid-cols-1 lg:grid-cols-2 items-center justify-center px-4 py-4 max-w-[1280px] mx-auto select-none"
+      className="h-full min-h-[80vh] grid grid-cols-1 lg:grid-cols-2 items-center justify-center px-4 py-4 max-w-7xl mx-auto select-none"
     >
-      <div className="flex flex-col items-start justify-center gap-[1rem]">
+      <div className="flex flex-col items-start justify-center gap-4">
         <div className="w-full h-auto flex flex-col">
           <h1>
             <span ref={text}>Career</span>
@@ -75,7 +75,7 @@ export default function ExperienceFold() {
           <div ref={experienceRef4}>
             <ExperienceStruct
               title="Google Developer Groups Davao"
-              role="Technical Staff (Mar. 2024-Present)"
+              role="Engineering Staff (Mar. 2024-Nov. 2025)"
             />
           </div>
         </div>

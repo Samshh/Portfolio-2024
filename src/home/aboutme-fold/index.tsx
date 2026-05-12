@@ -1,12 +1,8 @@
 import { useGradientText } from "@/animations/useGradientText";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
+import gsap from "@/lib/gsap-register";
 import { useRef } from "react";
 import { Icon } from "@iconify/react";
-
-gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 export default function AboutMeFold() {
   const trigger = useRef(null);
@@ -49,7 +45,7 @@ export default function AboutMeFold() {
     text2Element.innerHTML = words
       .map(
         (word) =>
-          `<span style="display: inline-block; margin-right: 6px;">${word}</span>`
+          `<span style="display: inline-block; margin-right: 6px;">${word}</span>`,
       )
       .join(" ");
 
@@ -74,7 +70,7 @@ export default function AboutMeFold() {
             document.title = "Sam Dacara";
           },
         },
-      }
+      },
     );
 
     gsap.from(".skill-item", {
@@ -96,24 +92,25 @@ export default function AboutMeFold() {
   return (
     <div
       ref={trigger}
-      className="h-full min-h-[80vh] grid grid-cols-1 lg:grid-cols-2 items-center justify-center px-4 py-4 max-w-[1280px] mx-auto select-none"
+      className="h-full min-h-[80vh] grid grid-cols-1 lg:grid-cols-2 items-center justify-center px-4 py-4 max-w-7xl mx-auto select-none"
     >
-      <div className="flex flex-col justify-center gap-[1rem]">
+      <div className="flex flex-col justify-center gap-4">
         <h1 className="text-[#333333]">
           <span ref={text}>About</span>.
         </h1>
         <h5 ref={text2} className="font-light flex flex-wrap">
-          I'm a {age}-year-old front-end developer from the Philippines, and I
-          create seamless 2D & 3D web animations. Outside of code, I'm a
-          passionate musician and anime enthusiast.
+          I'm a {age}-year-old front-end developer from the Philippines,
+          specializing in seamless 2D & 3D web experiences and animations using
+          modern web technologies. Outside of development, I'm also
+          passionate about music and anime.
         </h5>
-        <div className="w-full h-[1px] bg-[#333333]"></div>
+        <div className="w-full h-px bg-[#333333]"></div>
         <em>
           <h6 ref={text3} className="font-normal text-[#737373] leading-6">
             tech / tools:
           </h6>
         </em>
-        <div className="flex flex-wrap justify-start items-center gap-[0.5rem]">
+        <div className="flex flex-wrap justify-start items-center gap-2">
           {[
             { icon: "akar-icons:react-fill", label: "React" },
             { icon: "akar-icons:angular-fill", label: "Angular" },
@@ -130,7 +127,7 @@ export default function AboutMeFold() {
           ].map(({ icon, label }) => (
             <div
               key={label}
-              className="skill-item bg-[#0c0c0c] border border-[#333333] px-[1rem] py-[0.25rem] flex justify-center items-center gap-[0.5rem]"
+              className="skill-item bg-[#0c0c0c] border border-[#333333] px-4 py-1 flex justify-center items-center gap-2"
             >
               <Icon className="text-[20px]" icon={icon} />
               <p className="text-[1rem]">{label}</p>
@@ -138,13 +135,6 @@ export default function AboutMeFold() {
           ))}
         </div>
       </div>
-      {/* <div className="lg:px-[4rem] flex justify-center items-center">
-        <img
-          className="rounded-full border-2 border-[#333333] max-w-[25rem]"
-          src="/me.jpg"
-          alt="Sam Dacara"
-        />
-      </div> */}
     </div>
   );
 }

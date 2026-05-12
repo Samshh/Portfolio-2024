@@ -1,7 +1,4 @@
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-gsap.registerPlugin(ScrollToPlugin);
+import gsap from "@/lib/gsap-register";
 
 export function scrollToSection(ref: React.RefObject<HTMLDivElement>) {
   if (ref.current) {

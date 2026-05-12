@@ -86,8 +86,8 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
   useAnimateButton(spanRef3, buttonsRef3);
 
   return (
-    <div className="triggerHero h-full min-h-screen px-4 py-4 flex items-center max-w-[1280px] mx-auto select-none">
-      <div className="flex flex-col justify-center h-full gap-[1.5rem]">
+    <div className="triggerHero h-full min-h-screen px-4 py-4 flex items-center max-w-7xl mx-auto select-none">
+      <div className="flex flex-col justify-center h-full gap-6">
         <div className="flex flex-col justify-center items-start">
             <h4 className="font-thin text-[#535353]" ref={introTextRef}>
             Sam Dacara
@@ -99,7 +99,7 @@ export default function HeroFold({ projectsRef, contactRef }: HeroFoldProps) {
             <span className="text-[#333333]">.</span>
           </h1>
         </div>
-        <div className="flex flex-wrap justify-start items-center gap-[1rem]">
+        <div className="flex flex-wrap justify-start items-center gap-4">
           <Button
             ref={buttonsRef1}
             onClick={() => scrollToSection(projectsRef)}

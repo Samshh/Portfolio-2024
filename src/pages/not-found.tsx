@@ -2,7 +2,7 @@ import { useGradientText } from "@/animations/useGradientText";
 import { Button } from "../components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function NotFound() {
@@ -27,9 +27,9 @@ export default function NotFound() {
   return (
     <div
       ref={pageRef}
-      className="relative w-full h-screen justify-center items-center flex flex-col select-none gap-[0.5rem]"
+      className="relative w-full h-screen justify-center items-center flex flex-col select-none gap-2"
     >
-      <em className="text-center text-[#535353] flex flex-col gap-[0.5rem]">
+      <em className="text-center text-[#535353] flex flex-col gap-2">
         <p className="text-[0.7rem]">(A lost star of the night)</p>
         <h4 className="font-thin font-special astra">Astra perdita noctis</h4>
       </em>
@@ -38,7 +38,7 @@ export default function NotFound() {
           BACK
         </h6>
       </Button>
-      <div className="fixed bottom-4 text-center px-[1rem]">
+      <div className="fixed bottom-4 text-center px-4">
         <p className="font-normal font-serif text-[1rem] md:text-[1.25rem] text-[#535353]">
           404
         </p>

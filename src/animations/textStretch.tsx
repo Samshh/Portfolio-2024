@@ -1,6 +1,6 @@
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
 import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "@/lib/gsap-register";
 
 interface TextStretchProps {
   triggerRef: React.RefObject<HTMLElement>;

@@ -3,7 +3,7 @@ import { scrollToSection } from "@/animations/scrollToSection";
 import { useGradientText } from "@/animations/useGradientText";
 import { Button } from "@/components/ui/button";
 import BackgroundMusic from "@/components/BackgroundMusic";
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import useAnimateButton from "@/animations/animateButton";
 import { Icon } from "@iconify/react";
@@ -28,7 +28,6 @@ export default function Navigation({
   contactRef,
   navRef,
   menuOpen,
-  // hasStarted,
   onMenuToggle,
 }: NavigationProps) {
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -39,7 +38,7 @@ export default function Navigation({
   const navButton = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuItemsRef = useRef<HTMLDivElement>(null);
-  const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
+  const debounceTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const aboutMeRefDiv = useRef<HTMLDivElement>(null);
   const experienceRefDiv = useRef<HTMLDivElement>(null);
@@ -132,7 +131,7 @@ export default function Navigation({
         ref={navRef}
         className="z-30 fixed w-screen top-0 select-none opacity-0 transform -translate-y-12 border-[#333333] border-b bg-[#0c0c0c] bg-opacity-75"
       >
-        <div className="flex justify-between items-center px-4 py-4 max-w-[1280px] min-w-[320px] mx-auto">
+        <div className="flex justify-between items-center px-4 py-4 max-w-7xl min-w-[320px] mx-auto">
           <Button
             ref={homeButton}
             onClick={() => scrollToSection(heroRef)}
@@ -141,7 +140,7 @@ export default function Navigation({
           >
             <span ref={text}>SAM</span>
           </Button>
-          <div className="flex items-center justify-center gap-[1rem]">
+          <div className="flex items-center justify-center gap-4">
             <BackgroundMusic />
 
             <Button
@@ -162,11 +161,11 @@ export default function Navigation({
       </nav>
       <nav
         ref={menuRef}
-        className="fixed inset-0 z-30 items-center justify-center h-full min-h-screen w-full opacity-0 p-[1rem]"
+        className="fixed inset-0 z-30 items-center justify-center h-full min-h-screen w-full opacity-0 p-4"
       >
         <div
           ref={menuItemsRef}
-          className="flex flex-col items-start justify-center gap-[1rem] max-w-[1280px] mx-auto w-full"
+          className="flex flex-col items-start justify-center gap-4 max-w-7xl mx-auto w-full"
         >
           <div ref={aboutMeRefDiv}>
             <h3

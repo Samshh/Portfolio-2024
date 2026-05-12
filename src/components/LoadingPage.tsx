@@ -120,22 +120,22 @@ export default function LoadingPage({
   };
 
   return (
-    <div className="h-full min-h-screen fixed inset-0 flex flex-col justify-center items-center bg-[#0c0c0c] z-40 gap-[0.25rem] select-none">
+    <div className="h-full min-h-screen fixed inset-0 flex flex-col justify-center items-center bg-[#0c0c0c] z-40 gap-1 select-none">
       <div
         ref={startButtonRef}
-        className="hidden opacity-0 p-[1rem] flex-col items-center justify-center gap-[0.5rem]"
+        className="hidden opacity-0 p-4 flex-col items-center justify-center gap-2"
       >
-        <em className="text-center text-[#535353] flex flex-col gap-[0.5rem]">
+        <em className="text-center text-[#535353] flex flex-col gap-2">
           <p className="text-[0.7rem]">(To the Stars and the Abyss)</p>
           <h4 className="font-thin font-special astra">Ad astra Abyssosque</h4>
         </em>
-        <Button className="px-[2rem]" onClick={handleStartClick}>
+        <Button className="px-8" onClick={handleStartClick}>
           <h6 ref={startGradient}>START</h6>
         </Button>
       </div>
       <div
         ref={loadingContentRef}
-        className="flex items-center justify-center flex-col gap-[0.5rem]"
+        className="flex items-center justify-center flex-col gap-2"
       >
         <div className="flex justify-center items-center">
           <div ref={textLeft}>
@@ -149,14 +149,14 @@ export default function LoadingPage({
         </div>
         <div
           ref={bottomRef}
-          className="flex flex-col justify-center items-center gap-[0.5rem]"
+          className="flex flex-col justify-center items-center gap-2"
         >
           <h4 className="font-normal text-[1rem] text-[#535353]">
             Made with React
           </h4>
         </div>
       </div>
-      <div className="fixed bottom-4 text-center px-[1rem]">
+      <div className="fixed bottom-4 text-center px-4">
         <div ref={progressRef} className="opacity-0">
           <p className="font-normal font-serif text-[1rem] md:text-[1.25rem] text-[#535353]">
             {progress}%

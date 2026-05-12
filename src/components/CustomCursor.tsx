@@ -9,7 +9,7 @@ export default function CustomCursor({ hasStarted }: CustomCursorProps) {
   const bigBallRef = useRef<HTMLDivElement>(null);
   const smallBallRef = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState(false);
-  const inactivityTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const inactivityTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isHoveredRef = useRef(false);
   const cursorRef = useRef<HTMLDivElement>(null);
 
@@ -113,11 +113,11 @@ export default function CustomCursor({ hasStarted }: CustomCursorProps) {
     <div ref={cursorRef} className="opacity-0">
       <div
         ref={bigBallRef}
-        className="fixed top-0 left-0 mix-blend-difference pointer-events-none w-[30px] h-[30px] bg-[#333333] opacity-50 rounded-full hidden sm:block -z-10"
+        className="fixed top-0 left-0 mix-blend-difference pointer-events-none w-7.5 h-7.5 bg-[#333333] opacity-50 rounded-full hidden sm:block -z-10"
       />
       <div
         ref={smallBallRef}
-        className="fixed top-0 left-0 z-40 pointer-events-none mix-blend-difference w-[10px] h-[10px] bg-[#e7e7e7] rounded-full hidden sm:block"
+        className="fixed top-0 left-0 z-40 pointer-events-none mix-blend-difference w-2.5 h-2.5 bg-[#e7e7e7] rounded-full hidden sm:block"
       />
     </div>
   );

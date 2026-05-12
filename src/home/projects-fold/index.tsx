@@ -2,10 +2,8 @@ import { useGradientText } from "@/animations/useGradientText";
 import { Accordion } from "@/components/ui/accordion";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "@/lib/gsap-register";
 import ProjectAccordion from "./components/ProjectAccordion";
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectsFold() {
   const trigger = useRef(null);
@@ -49,9 +47,9 @@ export default function ProjectsFold() {
   return (
     <div
       ref={trigger}
-      className="h-full min-h-screen flex flex-col items-start justify-center px-4 py-4 max-w-[1280px] mx-auto gap-[1rem] select-none"
+      className="h-full min-h-screen flex flex-col items-start justify-center px-4 py-4 max-w-7xl mx-auto gap-4 select-none"
     >
-      <div className="w-full h-auto flex flex-col gap-[1rem]">
+      <div className="w-full h-auto flex flex-col gap-4">
         <h1>
           <span ref={text}>Projects</span>
           <span className="text-[#333333]">.</span>
@@ -83,6 +81,20 @@ export default function ProjectsFold() {
           <ProjectAccordion
             ref={accordionRef2}
             value="item-2"
+            title="GDG Davao"
+            role="Front-end Developer"
+            link="https://www.gdgdavao.org/"
+            linkLabel="Website"
+            techStack={[
+              { icon: "akar-icons:react-fill", label: "React" },
+              { icon: "file-icons:tailwind", label: "Tailwind" },
+            ]}
+          >
+            The official landing page for Google Developer Groups Davao — a regional tech community organizing meetups, workshops, and events for developers across Mindanao.
+          </ProjectAccordion>
+          <ProjectAccordion
+            ref={accordionRef3}
+            value="item-3"
             title="CHEDˣ2.0"
             role="Lead Front-end Developer"
             link="https://chedx2024.usep.edu.ph/"
@@ -97,8 +109,8 @@ export default function ProjectsFold() {
             December 4-5, 2024, at the SMX Convention Center, Davao City.
           </ProjectAccordion>
           <ProjectAccordion
-            ref={accordionRef3}
-            value="item-3"
+            ref={accordionRef4}
+            value="item-4"
             title="DurianPy"
             role="Senior Front-end Developer"
             link="https://www.durianpy.org/"
@@ -111,21 +123,6 @@ export default function ProjectsFold() {
           >
             DurianPy is a community for Python enthusiasts to learn, share, and
             connect through monthly meetups, workshops, and events.
-          </ProjectAccordion>
-          <ProjectAccordion
-            ref={accordionRef4}
-            value="item-4"
-            title="MMCM OPED"
-            role="Lead Front-end Developer"
-            link="https://mmcm-ocp.com/"
-            linkLabel="Website"
-            techStack={[
-              { icon: "akar-icons:react-fill", label: "React" },
-              { icon: "akar-icons:sass-fill", label: "Sass" },
-            ]}
-          >
-            A website that helps students at Mapúa Malayan Colleges Mindanao to
-            find the best companies for their internship.
           </ProjectAccordion>
           <ProjectAccordion
             ref={accordionRef5}

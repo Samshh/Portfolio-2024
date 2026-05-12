@@ -40,7 +40,7 @@ const ProjectAccordion = forwardRef<HTMLDivElement, ProjectAccordionProps>(
           </h4>
         </AccordionTrigger>
         <AccordionContent>
-          <div className="flex flex-col gap-[1rem]">
+          <div className="flex flex-col gap-4">
             <em>
               <div className="flex flex-col items-start md:items-center md:justify-between md:flex-row gap-4">
                 <h6 className="font-normal text-[#737373]">Role: {role}</h6>
@@ -63,11 +63,11 @@ const ProjectAccordion = forwardRef<HTMLDivElement, ProjectAccordionProps>(
             <div className="flex justify-start items-start">
               <h6 className="font-light md:w-1/2">{children}</h6>
             </div>
-            <div className="flex flex-wrap gap-[0.5rem] justify-start items-center">
+            <div className="flex flex-wrap gap-2 justify-start items-center">
               {techStack.map((tech) => (
                 <div
                   key={tech.label}
-                  className="bg-[#0c0c0c] border border-[#333333] px-[1rem] py-[0.25rem] flex justify-center items-center gap-[0.5rem]"
+                  className="bg-[#0c0c0c] border border-[#333333] px-4 py-1 flex justify-center items-center gap-2"
                 >
                   <Icon
                     className={`text-[${tech.iconSize || "20px"}]`}
